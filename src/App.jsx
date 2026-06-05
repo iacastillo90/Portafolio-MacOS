@@ -1,5 +1,5 @@
 import Navbar from './components/layout/Navbar';
-import Finder from './components/apps/Finder';
+import Finder from './components/apps/Finder/Finder';
 import { WindowProvider } from './context/WindowContext';
 
 function App() {

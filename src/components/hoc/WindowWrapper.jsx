@@ -1,92 +1,57 @@
+/**
+ * WindowWrapper.jsx — HOC de ventana macOS
+ *
+ * Higher-Order Component que envuelve cualquier app del portafolio
+ * con el chrome de ventana macOS (titlebar, traffic lights, drag).
+ *
+ * Props:
+ *   id       {string}    — Identificador único de la ventana en WindowContext
+ *   title    {string}    — Título que aparece en el titlebar
+ *   icon     {string}    — Emoji/ícono junto al título (default: '🗂')
+ *   width    {number}    — Ancho en px (default: 740)
+ *   height   {number}    — Alto en px (default: 480)
+ *   children {ReactNode} — Contenido de la ventana
+ *
+ * Uso:
+ *   <WindowWrapper id="terminal" title="Terminal" icon="💻">
+ *     <TerminalContent />
+ *   </WindowWrapper>
+ */
 import { useContext, useRef } from 'react';
 import Draggable from 'react-draggable';
 import { WindowContext } from '../../context/WindowContext';
-import './WindowWrapper.css';
+import WindowTitleBar from '../common/window/WindowTitleBar';
+import '../common/window/window.css';
 
-const WindowWrapper = ({ id, title, children }) => {
+const WindowWrapper = ({ id, title, icon, children, width = 740, height = 480 }) => {
     const { openApps, closeApp } = useContext(WindowContext);
     const nodeRef = useRef(null);
 
+    // No renderiza nada si la app no está abierta en el contexto
     if (!openApps[id]) return null;
 
     return (
-        <Draggable handle=".window-header" nodeRef={nodeRef}>
+        <Draggable
+            handle=".window-titlebar"
+            nodeRef={nodeRef}
+            bounds="parent"
+            defaultPosition={{
+                x: Math.round((window.innerWidth  - width)  / 2),
+                y: Math.round((window.innerHeight - height) / 2),
+            }}
+        >
             <div
                 ref={nodeRef}
-                className="window-container absolute top-20 left-20 w-[600px] h-[400px] bg-white/90 backdrop-blur-md rounded-xl shadow-2xl flex flex-col overflow-hidden border border-gray-200"
+                className="window-frame"
+                style={{ width, height }}
             >
-                {/* Barra de título */}
-                <div className="window-header group flex items-center px-4 py-3 bg-gray-100/80 border-b border-gray-200 cursor-move select-none">
+                <WindowTitleBar
+                    title={title}
+                    icon={icon}
+                    onClose={() => closeApp(id)}
+                />
 
-                    {/* Botones de control macOS */}
-                    <div className="traffic-lights flex gap-2 w-16 items-center">
-
-                        {/* Rojo — Cerrar */}
-                        <button
-                            onClick={() => closeApp(id)}
-                            className="traffic-btn traffic-red"
-                            title="Cerrar"
-                            aria-label="Cerrar ventana"
-                        >
-                            {/* Ícono × — solo visible en hover del grupo */}
-                            <svg
-                                className="traffic-icon"
-                                viewBox="0 0 10 10"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <line x1="2.5" y1="2.5" x2="7.5" y2="7.5" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
-                                <line x1="7.5" y1="2.5" x2="2.5" y2="7.5" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
-                            </svg>
-                        </button>
-
-                        {/* Amarillo — Minimizar */}
-                        <button
-                            className="traffic-btn traffic-yellow"
-                            title="Minimizar"
-                            aria-label="Minimizar ventana"
-                        >
-                            {/* Ícono — guión horizontal */}
-                            <svg
-                                className="traffic-icon"
-                                viewBox="0 0 10 10"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <line x1="2.5" y1="5" x2="7.5" y2="5" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
-                            </svg>
-                        </button>
-
-                        {/* Verde — Maximizar */}
-                        <button
-                            className="traffic-btn traffic-green"
-                            title="Pantalla completa"
-                            aria-label="Pantalla completa"
-                        >
-                            {/* Ícono + */}
-                            <svg
-                                className="traffic-icon"
-                                viewBox="0 0 10 10"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <line x1="5" y1="2.5" x2="5" y2="7.5" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
-                                <line x1="2.5" y1="5" x2="7.5" y2="5" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
-                            </svg>
-                        </button>
-                    </div>
-
-                    {/* Título centrado */}
-                    <p className="flex-1 text-center text-sm font-semibold text-gray-600 select-none">
-                        {title}
-                    </p>
-
-                    {/* Espacio compensador para centrar el título */}
-                    <div className="w-16" />
-                </div>
-
-                {/* Contenido */}
-                <div className="flex-1 p-4 overflow-y-auto">
+                <div className="window-body">
                     {children}
                 </div>
             </div>
