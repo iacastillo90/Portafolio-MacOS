@@ -1,6 +1,11 @@
-const App = () => {
+import Navbar from "./components/layout/Navbar";
+
+function App() {
   return (
-    <div>Portafolio Ivan Castillo</div>
+    <>
+      <Navbar />
+      <div>Portafolio Ivan Castillo</div>
+    </>
   )
 }
 
