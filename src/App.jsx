@@ -1,6 +1,7 @@
-import Navbar from './components/layout/Navbar';
+import Navbar from './components/layout/Navbar/Navbar';
 import Finder from './components/apps/Finder/Finder';
 import { WindowProvider } from './context/WindowContext';
+import Dock from './components/layout/Footer/Dock';
 
 function App() {
   return (
@@ -10,6 +11,8 @@ function App() {
         <Navbar />
       
         <Finder />
+
+        <Dock />
         
       </div>
     </WindowProvider>

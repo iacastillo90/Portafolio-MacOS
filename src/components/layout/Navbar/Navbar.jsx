@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import { WindowContext } from "../../context/WindowContext";
+import { WindowContext } from "../../../context/WindowContext";
 import { Wifi, Search, BatteryFull, SlidersHorizontal, CircleUser } from "lucide-react";
 import './Navbar.css'
 
