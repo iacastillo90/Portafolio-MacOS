@@ -1,38 +1,41 @@
 /**
  * dockItems.js
  * Datos estáticos de los ítems del Dock.
- * Separar los datos del componente facilita agregar/quitar apps sin tocar el JSX.
+ * Se usa import.meta.env.BASE_URL para que las rutas funcionen
+ * tanto en local (/) como en GitHub Pages (/Portafolio-MacOS/).
  */
+
+const base = import.meta.env.BASE_URL;
 
 export const dockItems = [
     {
         id: 'finder',
         name: 'Archivos',
-        icon: '/img/icons/launchpad.png',
+        icon: `${base}img/icons/launchpad.png`,
     },
     {
         id: 'terminal',
         name: 'Terminal',
-        icon: '/img/icons/terminal.png',
+        icon: `${base}img/icons/terminal.png`,
     },
     {
         id: 'safari',
         name: 'Safari',
-        icon: '/img/icons/safari.png',
+        icon: `${base}img/icons/safari.png`,
     },
     {
         id: 'github',
         name: 'Github',
-        icon: '/img/icons/github.png',
+        icon: `${base}img/icons/github.png`,
     },
     {
         id: 'mail',
         name: 'Correo',
-        icon: '/img/icons/mail.png',
+        icon: `${base}img/icons/mail.png`,
     },
     {
         id: 'about',
         name: 'Acerca de mí',
-        icon: '/img/icons/vscode.png',
+        icon: `${base}img/icons/vscode.png`,
     },
 ];

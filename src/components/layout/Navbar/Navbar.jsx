@@ -19,6 +19,7 @@ const ControlCenterIcon = ({ size }) => {
 
 function Navbar() {
     const [time, setTime] = useState(new Date());
+    const base = import.meta.env.BASE_URL;
 
     useEffect(() => {
         // Corregido: la función setInterval no toma el tiempo dentro del Date
@@ -43,8 +44,7 @@ function Navbar() {
             <div className="navbar-section">
                 <span className="navbar-item navbar-icon">
                     <img
-                        // Corregido: La ruta limpia para la carpeta public
-                        src="/logo/favicon.ico"
+                        src={`${base}logo/favicon.ico`}
                         alt="Logo"
                         className="navbar-logo"
                         draggable="false"
