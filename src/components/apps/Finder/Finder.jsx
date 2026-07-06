@@ -8,10 +8,10 @@
  */
 import { useState } from 'react';
 import WindowWrapper   from '../../hoc/WindowWrapper';
-import FinderSidebar   from './components/FinderSidebar';
-import FinderToolbar   from './components/FinderToolbar';
-import FinderContent   from './components/FinderContent';
-import FinderStatusBar from './components/FinderStatusBar';
+import FinderSidebar   from './components/FinderSidebar/index';
+import FinderToolbar   from './components/FinderToolbar/index';
+import FinderContent   from './components/FinderContent/index';
+import FinderStatusBar from './components/FinderStatusBar/index';
 import './Finder.css';
 
 /* ── Datos de los proyectos ─────────────────────────────────────

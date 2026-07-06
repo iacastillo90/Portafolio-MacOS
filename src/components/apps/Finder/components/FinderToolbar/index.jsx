@@ -7,6 +7,7 @@
  *   onViewChange{function} — Callback para cambiar la vista
  */
 import { ChevronLeft, ChevronRight, LayoutGrid, List, Search } from 'lucide-react';
+import './FinderToolbar.css';
 
 const FinderToolbar = ({ activeTab, viewMode, onViewChange }) => (
     <div className="finder-toolbar">

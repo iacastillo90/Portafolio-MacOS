@@ -1,0 +1,75 @@
+/* ════════════════════════════════════════
+   SIDEBAR
+   ════════════════════════════════════════ */
+.finder-sidebar {
+    width: 180px;
+    min-width: 180px;
+    background: #e8e8e8;
+    border-right: 1px solid #d0d0d0;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 6px;
+    overflow-y: auto;
+    user-select: none;
+}
+
+/* Etiqueta de sección (FAVORITOS, UBICACIONES) */
+.finder-sidebar-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: #888;
+    letter-spacing: 0.06em;
+    padding: 0 8px;
+    margin-bottom: 3px;
+}
+
+.finder-sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+/* Ítem del sidebar */
+.finder-sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    width: 100%;
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    color: #2c2c2c;
+    text-align: left;
+    transition: background 0.12s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.finder-sidebar-item:hover {
+    background: rgba(0, 0, 0, 0.07);
+}
+
+.finder-sidebar-item.active {
+    background: #3478f6;
+    color: #fff;
+}
+
+/* Ícono SVG del sidebar (envoltorio) */
+.finder-sidebar-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #3478f6; /* azul macOS */
+    width: 16px;
+    height: 16px;
+}
+
+.finder-sidebar-item.active .finder-sidebar-icon {
+    color: #fff;
+}

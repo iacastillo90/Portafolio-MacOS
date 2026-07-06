@@ -11,7 +11,8 @@ import {
     FolderSideIcon,
     DownloadSideIcon,
     GitHubIcon,
-} from '../../../common/icons/SidebarIcons';
+} from '../../../../common/icons/SidebarIcons';
+import './FinderSidebar.css';
 
 const FAVORITES = [
     { label: 'Recientes',  Icon: RecentIcon       },

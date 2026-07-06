@@ -1,0 +1,99 @@
+/* ════════════════════════════════════════
+   CONTENIDO — GRID
+   ════════════════════════════════════════ */
+.finder-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 12px;
+}
+
+.finder-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 8px;
+}
+
+.finder-file-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 4px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.1s ease;
+}
+
+.finder-file-item:hover {
+    background: rgba(52, 120, 246, 0.1);
+}
+
+.finder-file-name {
+    font-size: 11px;
+    font-weight: 400;
+    color: #1d1d1f;
+    text-align: center;
+    word-break: break-word;
+    line-height: 1.3;
+    /* Máximo 2 líneas */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* ════════════════════════════════════════
+   CONTENIDO — LIST
+   ════════════════════════════════════════ */
+.finder-list {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+.finder-list-header th {
+    text-align: left;
+    padding: 4px 12px;
+    font-weight: 600;
+    color: #555;
+    border-bottom: 1px solid #e0e0e0;
+    position: sticky;
+    top: 0;
+    background: #f9f9f9;
+}
+
+.finder-list-row {
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    transition: background 0.1s ease;
+}
+
+.finder-list-row:hover {
+    background: rgba(52, 120, 246, 0.06);
+}
+
+.finder-list-row td {
+    padding: 5px 12px;
+    color: #444;
+    vertical-align: middle;
+}
+
+.finder-list-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    color: #1d1d1f;
+}
+
+/* Escalar el SVG en vista lista */
+.finder-list-icon {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    transform: scale(0.5);
+    transform-origin: center;
+    width: 24px;
+    height: 24px;
+    overflow: visible;
+}

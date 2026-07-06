@@ -5,6 +5,8 @@
  *   count     {number} — Cantidad de elementos visibles
  *   available {string} — Espacio disponible (ej: "142 GB")
  */
+import './FinderStatusBar.css';
+
 const FinderStatusBar = ({ count, available = '142 GB' }) => (
     <div className="finder-statusbar">
         {count} {count === 1 ? 'elemento' : 'elementos'}

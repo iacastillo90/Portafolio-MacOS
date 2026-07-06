@@ -8,13 +8,20 @@
  * Cada item tiene: { id, name, type, date }
  * type: 'folder' | 'pdf' | 'image'
  */
-import { getFileIcon } from '../../../common/icons/FileIcons';
+import { getFileIcon } from '../../../../common/icons/FileIcons';
+import { useContext } from 'react';
+import { WindowContext } from '../../../../../context/WindowContext';
+import './FinderContent.css';
 
 /* ── Vista Cuadrícula ── */
-const GridView = ({ items }) => (
+const GridView = ({ items, onDoubleClick }) => (
     <div className="finder-grid">
         {items.map((item) => (
-            <div key={item.id} className="finder-file-item">
+            <div 
+                key={item.id} 
+                className="finder-file-item cursor-pointer hover:bg-blue-100/20 rounded-md"
+                onDoubleClick={() => onDoubleClick(item)}
+            >
                 {getFileIcon(item.type)}
                 <span className="finder-file-name">{item.name}</span>
             </div>
@@ -23,7 +30,7 @@ const GridView = ({ items }) => (
 );
 
 /* ── Vista Lista ── */
-const ListView = ({ items }) => (
+const ListView = ({ items, onDoubleClick }) => (
     <table className="finder-list">
         <thead>
             <tr className="finder-list-header">
@@ -34,7 +41,11 @@ const ListView = ({ items }) => (
         </thead>
         <tbody>
             {items.map((item) => (
-                <tr key={item.id} className="finder-list-row">
+                <tr 
+                    key={item.id} 
+                    className="finder-list-row cursor-pointer hover:bg-blue-100/20"
+                    onDoubleClick={() => onDoubleClick(item)}
+                >
                     <td className="finder-list-name">
                         <span className="finder-list-icon">
                             {getFileIcon(item.type)}
@@ -50,13 +61,25 @@ const ListView = ({ items }) => (
 );
 
 /* ── Componente principal ── */
-const FinderContent = ({ items, viewMode }) => (
-    <div className="finder-content">
-        {viewMode === 'grid'
-            ? <GridView items={items} />
-            : <ListView items={items} />
+const FinderContent = ({ items, viewMode }) => {
+    const { openApp } = useContext(WindowContext);
+
+    const handleDoubleClick = (item) => {
+        if (item.type === 'pdf') {
+            openApp('preview');
+        } else if (item.type === 'folder' && item.name === 'Terminal') {
+            openApp('terminal');
         }
-    </div>
-);
+    };
+
+    return (
+        <div className="finder-content">
+            {viewMode === 'grid'
+                ? <GridView items={items} onDoubleClick={handleDoubleClick} />
+                : <ListView items={items} onDoubleClick={handleDoubleClick} />
+            }
+        </div>
+    );
+};
 
 export default FinderContent;
