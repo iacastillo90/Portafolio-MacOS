@@ -1,0 +1,28 @@
+/* =============================================
+   DOCK — macOS-style bottom dock
+   ============================================= */
+
+/* Wrapper posicionado en el centro inferior */
+.dock-wrapper {
+    position: fixed;
+    bottom: 0.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 50;
+    user-select: none;
+}
+
+/* Barra glassmorphism del dock */
+.dock-bar {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    background: rgba(255, 255, 255, 0.20);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.30);
+    border-radius: 1rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}

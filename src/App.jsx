@@ -1,7 +1,10 @@
-import Navbar from './components/layout/Navbar/Navbar';
+import Navbar from './components/layout/Navbar/index';
 import Finder from './components/apps/Finder/Finder';
+import Terminal from './components/apps/Terminal/Terminal';
+import Preview from './components/apps/Preview/Preview';
+import Safari from './components/apps/Safari/Safari';
 import { WindowProvider } from './context/WindowContext';
-import Dock from './components/layout/Footer/Dock';
+import Footer from './components/layout/Footer/index';
 
 function App() {
   return (
@@ -11,8 +14,11 @@ function App() {
         <Navbar />
       
         <Finder />
+        <Terminal />
+        <Preview />
+        <Safari />
 
-        <Dock />
+        <Footer />
         
       </div>
     </WindowProvider>

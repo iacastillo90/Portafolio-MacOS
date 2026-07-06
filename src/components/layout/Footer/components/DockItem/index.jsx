@@ -3,6 +3,7 @@
  * Componente atómico: representa un único ítem del Dock.
  * Recibe los datos del ítem y si está activo; notifica el click al padre.
  */
+import './DockItem.css';
 
 const DockItem = ({ id, name, icon, isOpen, onClick }) => {
     return (

@@ -5,9 +5,9 @@
  */
 
 import { useContext } from 'react';
-import { WindowContext } from '../../../context/WindowContext';
-import DockItem from './DockItem';
-import { dockItems } from './dockItems';
+import { WindowContext } from '../../../../../context/WindowContext';
+import DockItem from '../DockItem/index';
+import { dockItems } from '../../dockItems';
 import './Dock.css';
 
 const Dock = () => {
