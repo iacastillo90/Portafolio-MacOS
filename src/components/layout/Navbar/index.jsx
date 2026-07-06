@@ -37,11 +37,18 @@ function Navbar() {
         });
     };
 
+    const formatTimeMobile = (date) => {
+        return date.toLocaleTimeString('es-ES', {
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+    };
+
     const { openApp } = useContext(WindowContext);
 
     return (
         <nav className="navbar">
-            <div className="navbar-section">
+            <div className="navbar-section hidden sm:flex">
                 <span className="navbar-item navbar-icon">
                     <img
                         src={`${base}logo/favicon.ico`}
@@ -53,14 +60,21 @@ function Navbar() {
                 <span className="navbar-item navbar-brand">Portafolio</span>
                 <span
                     onClick={() => openApp('finder')}
-                    className="navbar-item hidden sm:block cursor-pointer"
+                    className="navbar-item cursor-pointer"
                 >
                     Archivo
                 </span>
-                <span className="navbar-item sm:block">Edición</span>
-                <span className="navbar-item sm:block">Visualización</span>
+                <span className="navbar-item">Edición</span>
+                <span className="navbar-item">Visualización</span>
             </div>
-            <div className="navbar-section">
+            
+            {/* Mobile carrier info (simulated iOS) */}
+            <div className="navbar-section flex sm:hidden text-sm font-semibold pl-4 tracking-wide">
+                {formatTimeMobile(time)} <span className="ml-1 opacity-70"><Wifi size={14} strokeWidth={3} /></span>
+            </div>
+
+            {/* Desktop right section */}
+            <div className="navbar-section hidden sm:flex">
                 <span className="navbar-item navbar-icon" title="Búsqueda"><Search size={16} strokeWidth={2.5} /></span>
                 <span className="navbar-item navbar-icon" title="Wi-Fi"><Wifi size={16} strokeWidth={2.5} /></span>
                 <span className="navbar-item navbar-icon" title="Batería"><BatteryFull size={18} strokeWidth={2} /></span>
@@ -69,6 +83,11 @@ function Navbar() {
                     <ControlCenterIcon size={16} />
                 </span>
                 <span className="navbar-item">{formatTime(time)}</span>
+            </div>
+
+            {/* Mobile right section (simulated iOS battery) */}
+            <div className="navbar-section flex sm:hidden pr-2">
+                 <BatteryFull size={18} strokeWidth={2.5} />
             </div>
         </nav>
     )

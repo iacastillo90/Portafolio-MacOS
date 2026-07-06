@@ -26,3 +26,22 @@
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
                 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
+
+/* =============================================
+   iOS MODE (Mobile)
+   ============================================= */
+@media (max-width: 768px) {
+    .dock-wrapper {
+        bottom: 1.5rem;
+        width: 90%;
+        max-width: 400px;
+    }
+    
+    .dock-bar {
+        border-radius: 2.2rem;
+        background: rgba(255, 255, 255, 0.45);
+        padding: 1rem 1.25rem;
+        justify-content: space-around;
+        width: 100%;
+    }
+}

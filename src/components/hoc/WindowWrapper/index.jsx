@@ -27,13 +27,41 @@ const WindowWrapper = ({ id, title, icon, children, width = 740, height = 480 })
     const { openApps, minimizedApps, closeApp, minimizeApp } = useContext(WindowContext);
     const nodeRef = useRef(null);
     const [isExpanded, setIsExpanded] = useState(false);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth <= 768);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     // No renderiza nada si la app no está abierta en el contexto
     if (!openApps[id]) return null;
 
     const isMinimized = minimizedApps[id];
 
-    // Estilos dinámicos para pantalla completa
+    // MODO IOS (Móvil)
+    if (isMobile) {
+        return (
+            <div className="fixed inset-0 z-[9999] bg-white flex flex-col w-screen h-screen">
+                {/* iOS Header */}
+                <div className="flex items-center justify-between px-4 pt-12 pb-3 bg-[#f8f8f8] border-b border-gray-300 shadow-sm backdrop-blur-md">
+                    <button onClick={() => closeApp(id)} className="text-[#007aff] text-lg flex items-center bg-transparent border-none outline-none cursor-pointer p-0 font-medium">
+                        <svg className="w-6 h-6 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7"></path></svg>
+                        Inicio
+                    </button>
+                    <span className="font-semibold text-gray-900 text-lg">{title}</span>
+                    <div className="w-20"></div> {/* Espaciador para centrar el título */}
+                </div>
+                {/* Contenido de la App */}
+                <div className="flex-1 overflow-auto bg-white relative">
+                    {children}
+                </div>
+            </div>
+        );
+    }
+
+    // MODO MACOS (Desktop)
     const expandedStyle = {
         width: '100vw',
         height: 'calc(100vh - 24px - 80px)', // navbar + dock aprox
