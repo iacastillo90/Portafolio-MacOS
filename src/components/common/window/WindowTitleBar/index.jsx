@@ -11,7 +11,8 @@
  *   onMinimize {function} — Se pasa a TrafficLights (opcional)
  *   onExpand   {function} — Se pasa a TrafficLights (opcional)
  */
-import TrafficLights from './TrafficLights';
+import TrafficLights from '../TrafficLights';
+import './WindowTitleBar.css';
 
 const WindowTitleBar = ({ title, icon = '🗂', onClose, onMinimize, onExpand }) => (
     <div className="window-titlebar">

@@ -1,0 +1,44 @@
+/* ── Barra de título (28px — macOS exacto) ── */
+.window-titlebar {
+    height: 28px;
+    min-height: 28px;
+    flex-shrink: 0;
+
+    /* Gradiente gris típico del titlebar de macOS */
+    background: linear-gradient(to bottom, #e8e8e8 0%, #d8d8d8 100%);
+    border-bottom: 1px solid #b8b8b8;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px;
+    cursor: default;
+}
+
+/* ── Título de la ventana ── */
+.window-title {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #2c2c2c;
+    letter-spacing: -0.01em;
+
+    pointer-events: none; /* No interfiere con el drag */
+}
+
+.window-title-icon {
+    font-size: 13px;
+    line-height: 1;
+}
+
+/* Spacer que balancea el espacio de los traffic lights */
+.window-title-spacer {
+    width: 56px;
+    flex-shrink: 0;
+}

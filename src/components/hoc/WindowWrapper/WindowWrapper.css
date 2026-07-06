@@ -1,0 +1,45 @@
+/* ================================================
+   window.css — Estilos base compartidos para todas
+   las ventanas del portafolio macOS
+   ================================================
+   Importar en WindowWrapper.css (o directamente
+   en el componente que los necesite).
+   ================================================ */
+
+/* ── Marco principal de la ventana ── */
+.window-frame {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+
+    /* Borde exterior muy sutil */
+    border: 1px solid rgba(0, 0, 0, 0.18);
+
+    /* Sombra multicapa característica de macOS */
+    box-shadow:
+        0 0 0 0.5px rgba(0, 0, 0, 0.12),
+        0 2px 4px   rgba(0, 0, 0, 0.08),
+        0 8px 16px  rgba(0, 0, 0, 0.12),
+        0 20px 40px rgba(0, 0, 0, 0.16),
+        0 40px 80px rgba(0, 0, 0, 0.12);
+
+    z-index: 100;
+    user-select: none;
+}
+
+/* ── Cuerpo de la ventana ── */
+.window-body {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    background-color: #ffffff;
+}
+
+/* Override react-draggable inline styles when expanded */
+.window-frame.expanded {
+    transform: translate(0px, 0px) !important;
+    border-radius: 0;
+    transition: all 0.2s ease-in-out;
+}

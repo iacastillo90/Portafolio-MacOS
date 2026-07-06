@@ -1,0 +1,52 @@
+/* ── Traffic Lights ── */
+.traffic-lights {
+    display: flex;
+    align-items: center;
+    gap: 8px;       /* Espaciado exacto de macOS */
+    width: 56px;    /* Ancho fijo para balancear el título */
+    flex-shrink: 0;
+}
+
+.traffic-btn {
+    position: relative;
+    width: 12px;    /* Tamaño exacto macOS */
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: filter 0.1s ease;
+    box-shadow: inset 0 0 0 0.5px rgba(0, 0, 0, 0.15); /* Efecto 3D sutil */
+}
+
+.traffic-btn:active {
+    filter: brightness(0.88);
+}
+
+/* Colores HEX exactos de macOS */
+.traffic-red    { background-color: #FF5F57; }
+.traffic-yellow { background-color: #FEBC2E; }
+.traffic-green  { background-color: #28C840; }
+
+/* Hover: oscurece cada botón levemente */
+.traffic-red:hover    { background-color: #e8514a; }
+.traffic-yellow:hover { background-color: #e5a827; }
+.traffic-green:hover  { background-color: #22b038; }
+
+/* Íconos SVG dentro de cada botón: ocultos por defecto */
+.traffic-icon {
+    width: 8px;
+    height: 8px;
+    opacity: 0;
+    transition: opacity 0.1s ease;
+    pointer-events: none;
+    flex-shrink: 0;
+}
+
+/* Revelar íconos al hacer hover sobre el titlebar completo */
+.window-titlebar:hover .traffic-icon {
+    opacity: 1;
+}

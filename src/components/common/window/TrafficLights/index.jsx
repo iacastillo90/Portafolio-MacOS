@@ -11,6 +11,7 @@
  *   onMinimize {function} — Callback al presionar el botón amarillo (opcional)
  *   onExpand   {function} — Callback al presionar el botón verde (opcional)
  */
+import './TrafficLights.css';
 
 const TrafficLights = ({ onClose, onMinimize, onExpand }) => (
     <div className="traffic-lights">
