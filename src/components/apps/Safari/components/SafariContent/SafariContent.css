@@ -1,0 +1,188 @@
+/* ── Content Area ── */
+.safari-content-area {
+    flex: 1;
+    position: relative;
+    z-index: 0;
+    background: linear-gradient(to bottom right, #f9fafb, #f3f4f6);
+    overflow: hidden;
+}
+
+/* ── Start Page ── */
+.safari-start-page {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.safari-start-container {
+    width: 100%;
+    max-width: 640px;
+    padding: 50px 32px 64px 32px;
+}
+
+.safari-section-title {
+    font-weight: 600;
+    font-size: 24px;
+    color: #1f2937;
+    margin-bottom: 24px;
+}
+
+.safari-favorites-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+
+.safari-favorite-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+}
+
+.safari-favorite-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+    transition: box-shadow 0.15s ease;
+}
+
+.safari-favorite-icon:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.safari-favorite-icon img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.safari-favorite-label {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #6b7280;
+    text-align: center;
+    font-weight: 500;
+}
+
+.safari-privacy-report {
+    margin-top: 64px;
+    width: 100%;
+}
+
+.safari-privacy-card {
+    height: 64px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    border-radius: 16px;
+    padding: 0 20px;
+}
+
+.safari-privacy-icon {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-right: 1px solid #e5e7eb;
+    padding-right: 20px;
+    height: 32px;
+}
+
+.safari-privacy-icon svg {
+    color: #22c55e;
+    flex-shrink: 0;
+}
+
+.safari-privacy-number {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.safari-privacy-text {
+    padding-left: 20px;
+    font-size: 14px;
+    color: #4b5563;
+}
+
+/* ── Blocked / Iframe Area ── */
+.safari-blocked-page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9fafb;
+}
+
+.safari-blocked-card {
+    text-align: center;
+    color: #6b7280;
+    width: 75%;
+    max-width: 28rem;
+    background-color: #ffffff;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
+}
+
+.safari-blocked-card svg {
+    margin: 0 auto 16px;
+    width: 48px;
+    height: 48px;
+    color: #9ca3af;
+}
+
+.safari-blocked-title {
+    font-weight: 600;
+    font-size: 18px;
+    color: #1f2937;
+}
+
+.safari-blocked-text {
+    font-size: 14px;
+    margin-top: 12px;
+    color: #6b7280;
+}
+
+.safari-blocked-btn {
+    margin-top: 24px;
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    color: #ffffff;
+    background-color: #3b82f6;
+    text-decoration: none;
+    transition: background-color 0.15s ease;
+}
+
+.safari-blocked-btn:hover {
+    background-color: #2563eb;
+}
+
+.safari-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: #ffffff;
+}

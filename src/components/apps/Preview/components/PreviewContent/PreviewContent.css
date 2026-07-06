@@ -1,0 +1,15 @@
+/* ================================================
+   Preview — Estilos macOS
+   ================================================ */
+
+.preview-container {
+    width: 100%;
+    height: 100%;
+    background-color: #e5e7eb;
+}
+
+.preview-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
