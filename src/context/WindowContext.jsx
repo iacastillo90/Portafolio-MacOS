@@ -6,12 +6,23 @@ export const WindowProvider = ({ children }) => {
   const [openApps, setOpenApps] = useState({
     finder: false,
   });
+  const [minimizedApps, setMinimizedApps] = useState({});
 
-  const openApp = (appName) => setOpenApps({ ...openApps, [appName]: true });
-  const closeApp = (appName) => setOpenApps({ ...openApps, [appName]: false });
+  const openApp = (appName) => {
+    setOpenApps(prev => ({ ...prev, [appName]: true }));
+    setMinimizedApps(prev => ({ ...prev, [appName]: false }));
+  };
+
+  const closeApp = (appName) => {
+    setOpenApps(prev => ({ ...prev, [appName]: false }));
+  };
+
+  const minimizeApp = (appName) => {
+    setMinimizedApps(prev => ({ ...prev, [appName]: true }));
+  };
 
   return (
-    <WindowContext.Provider value={{ openApps, openApp, closeApp }}>
+    <WindowContext.Provider value={{ openApps, minimizedApps, openApp, closeApp, minimizeApp }}>
       {children}
     </WindowContext.Provider>
   );
