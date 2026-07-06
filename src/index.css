@@ -17,7 +17,7 @@
 
 
 html, body {
-    background-image: url('../public/img/ui/macOS-ventura-dark.jpg');
+    background-image: url('/img/ui/macOS-ventura-dark.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
