@@ -1,34 +1,27 @@
-# About Me
+# Sobre Mí
 
-## Introduction
+## Introducción
 
-Hey there! 👋
+¡Hola! 👋
 
-I'm a B.Tech student at the [Computer Science and Engineering](https://www.mbm.ac.in/deptt-of-computer-science-engineering) department of [MBM University](https://www.mbm.ac.in/).
+Soy **Iván Andrés Castillo Iligaray**, Desarrollador Full Stack con experiencia en el diseño y construcción de arquitecturas sólidas, tanto en el frontend como en el backend. 
 
-🚀 Passionate about Open Source, I've contributed to various organizations, helping build and improve projects that benefit the community. Coding for Open Source is not just a hobby for me — *it's a way of life!*
+🚀 Cuento con experiencia profesional trabajando en **Morris & Opazo (AWS Partner)**, donde me especialicé en **Java / Spring Boot**, arquitecturas Cloud (AWS) y el ecosistema JavaScript (Stack MERN y Vue.js). Me apasiona desarrollar sistemas críticos y eficientes; por ejemplo, lideré el desarrollo backend de un CMS para gestión de carga eléctrica integrando **OCPP 1.6** y **WebSockets** para comunicación en tiempo real.
 
-💻 With 6 months of experience as a full stack developer, I'm constantly evolving and embracing new technologies.
+💻 Con una fuerte base en metodologías ágiles, disfruto resolviendo problemas complejos, optimizando el rendimiento (logrando mejoras de hasta 80% en eficiencia) y asegurando las plataformas con **Spring Security** y **JWT**. Además, manejo despliegues de infraestructura en AWS (EC2, S3, Lambda, VPC).
 
-🌱 Currently diving deep into Next.js, TypeScript, and WebSockets, while also working on building my own library.
+🌱 Me considero un aprendiz de por vida. Siempre estoy evolucionando y adaptándome a nuevas tecnologías. Cuento con certificaciones de Oracle en IA y bases de Java, además de ser graduado del programa AWS re/Start.
 
-🤝 Always excited to collaborate on impactful Open Source projects.
+¡Construyamos algo increíble juntos! 🌟
 
-Let's build something amazing together! 🌟
+## Contacto
 
+Puedes contactarme a través de:
 
-## Contact
+- **Email:** [iacastillo.ili2@gmail.com](mailto:iacastillo.ili2@gmail.com)
+- **LinkedIn:** [Iván Andrés Castillo Iligaray](https://www.linkedin.com/in/iv%C3%A1n-castillo-iligaray-03b25b243/)
+- **GitHub:** [GitHub Profile](https://github.com/iacastillo90)
 
-Contact me by:
+## Currículum
 
-- Email: [aakash@gmail.com](mailto:aakash6263264@gmail.com)
-- Github: [@aakashsharma003](https://github.com/macOS-Portfolio)
-- GSSOC: [GSSOC Contributer](https://gssoc.girlscript.tech/)
-- Linkedin: [aakashsharma003](https://www.linkedin.com/in/aakashsharma003)
-- Personal Website: [dev.me](https://aakash-sharma.vercel.app)
-
-
-## Resume
-
-- download: [English](https://drive.google.com/file/d/1EDQQZQvAWodAMgEdycBP7E_6UmmVlz-x/view?usp=sharing)
-
+- Descargar PDF: [CV - Español](./CV-Ivan-Castillo-Full-Stack-Developer-v2.pdf)
